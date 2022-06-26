@@ -14,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="home">
         <div class="row">
             <div class=" col-md-6 justify-content-center">
                     <div class="container-fluid pt-5">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="container text-md-center">
+        <div class="container text-md-center" id="service">
             <h1 class=" text-light">MY SERVICES</h1>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="container text-md-center">
+        <div class="container text-md-center" id="projects">
             <h1 class=" text-light">MY PROJECTS</h1>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -127,11 +127,111 @@
                 </div>
             </div>
         </div>
-        <div class="container text-md-center">
+        <div class="container text-md-center" id="about">
             <h1 class=" text-light">ABOUT ME</h1>
             <p class=" text-light text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, officiis nostrum aperiam ipsum quasi assumenda asperiores! Commodi facere officia nisi voluptates provident magnam autem accusantium. Aliquid corporis cupiditate voluptatum ea? Earum ad, quia et debitis aliquid quasi quod aspernatur voluptate aperiam incidunt! Laudantium, repellat. Natus aliquam optio aut vitae provident.</p>
 
         </div>
+
+        <div class=" row pt-5">
+            <div class=" col-md-6">
+                <h5 class=" text-light">Personal Details</h5>
+                <div class=" row">
+                    <div class=" col-md-3">
+                        <p class="inf" style="color: #17C5D0;">BirthDay</p>
+                    </div>
+                    <div class=" col-md-9">
+                        <p class="inf" style="color: #17C5D0;">: 04 April 1999</p>
+                    </div>
+                </div>
+
+                <div class=" row">
+                    <div class=" col-md-3">
+                        <p class="inf" style="color: #17C5D0;">Phone</p>
+                    </div>
+                    <div class=" col-md-9">
+                        <p class="inf" style="color: #17C5D0;">: +94 766352298</p>
+                    </div>
+                </div>
+
+                <div class=" row">
+                    <div class=" col-md-3">
+                        <p class="inf" style="color: #17C5D0;">Email</p>
+                    </div>
+                    <div class=" col-md-9">
+                        <p class="inf" style="color: #17C5D0;">: hashanranasinghe98@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class=" row">
+                    <div class=" col-md-3">
+                        <p class="inf" style="color: #17C5D0;">Linkedin</p>
+                    </div>
+                    <div class=" col-md-9">
+                        <p class="inf" style="color: #17C5D0;">: <a style="color: #17C5D0;" href="www.linkedin.com/in/hashan-ranasinghe"> www.linkedin.com/in/hashan-ranasinghe</a> </p>
+                    </div>
+                </div>
+
+                <div class=" row">
+                    <div class=" col-md-3">
+                        <p class="inf" style="color: #17C5D0;">Address</p>
+                    </div>
+                    <div class=" col-md-9">
+                        <p class="inf" style="color: #17C5D0;">: 364/E,Embilmeegama,Pilimatalawa.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class=" col-md-6 text-md-center">
+                <h5 class=" text-light">My Interest</h5>
+                <div class=" row">
+
+                    <div class=" col-md-3">
+                        <div class="card bg-dark h-75">
+                        
+                            <div class="card-body">
+                                <i class="fa-solid fa-gamepad fa-2xl" id="icon"></i>
+                                <p class="text-light pt-2">Games</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-md-3">
+                        <div class="card bg-dark h-75">                        
+                            <div class="card-body">
+                                <i class="fa-solid fa-headphones-simple fa-2xl" id="icon"></i>
+                                <p class="text-light pt-2">Music</p>                       
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-md-3">
+                        <div class="card bg-dark h-75">                        
+                            <div class="card-body">
+                                <i class="fa-solid fa-film fa-2xl" id="icon"></i>
+                                <p class="text-light pt-2">Cinema</p>                       
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-md-3">
+                        <div class="card bg-dark h-75">                        
+                            <div class="card-body">
+                                <i class="fa-solid fa-plane-departure fa-2xl" id="icon"></i>
+                                <p class="text-light pt-2">Travelling</p>                       
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container text-md-center">
+                <button type="button" class="btn btn-outline-light">Download CV<i class="fa-solid fa-arrow-down pl-2" id="icon"></i> </button>
+            </div>
+            
+        </div>
+
+
     </div>
         
     

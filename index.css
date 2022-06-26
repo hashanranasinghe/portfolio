@@ -1,7 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #23253A;
 }
 #icon{
     color: white;
 }
-
+.inf{
+    color: #17C5D0;
+}
