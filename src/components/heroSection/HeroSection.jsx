@@ -10,7 +10,7 @@ function HeroSection() {
 
       <img
         src={Owner}
-        className="absolute bottom-0 right-0 lg:left-0 mx-auto h-2/3 object-cover"
+        className="absolute bottom-0 right-0 left-0 mx-auto h-2/3 object-cover"
         alt=""
       />
       
