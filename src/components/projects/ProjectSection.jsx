@@ -1,28 +1,23 @@
-import React from "react";
-import ProjectCard from "./ProjectCard";
+
+import { About } from "./About";
+
 
 function ProjectSection() {
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto ">
       <div className="flex flex-col items-center gap-3">
-        <h1 className="text-indigo-500 font-bold">Portfolio</h1>
-        <h1 className="text-xl">Works & Projects</h1>
-        <p className="text-gray-400 text-center w-1/2 ">
+      <h1 className="text-blue-700 font-bold text-5xl py-5">
+            Contact Me
+          </h1>
+        <p className="text-black text-center w-screen px-40 pt-2 text-xl">
           {" "}
-          Hello and welcome to my portfolio! I'm Hashan, a Flutter developer
+          Hello and welcome to my portfolio! I`m Hashan, a Flutter developer
           with over 5 years of experience building high-quality mobile apps for
           a variety of industries.{" "}
         </p>
       </div>
-      <div className="flex flex-wrap justify-between p-5 sm:p-0">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 py-10">
+<About/>
       </div>
     </div>
   );

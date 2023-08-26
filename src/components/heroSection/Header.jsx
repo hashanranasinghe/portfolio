@@ -4,7 +4,7 @@ import HeroSection from "./HeroSection";
 
 function Header() {
   return (
-    <div className="h-screen overflow-hidden relative  bg-gradient-to-t from-indigo-200">
+    <div className="h-screen overflow-hidden relative  bg-gradient-to-t from-indigo-50">
       <nav className="w-full fixed top-0 z-10 backdrop-blur-md bg-white/50 ...">
         <div className="container mx-auto py-5 flex items-center justify-between">
           <span className="text-2xl font-bold  text-indigo-900">H</span>
