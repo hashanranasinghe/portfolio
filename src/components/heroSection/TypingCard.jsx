@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 function TypingCard() {
@@ -19,7 +19,7 @@ function TypingCard() {
       className="flex flex-col items-center justify-center rounded-lg shadow-xl absolute top-1/4 m-auto bg-white h-1/5 w-1/4 left-20"
     >
       <div className="flex flex-col text-center text-sm sm:left-10 sm:text-sm md:left-3 md:text-4xl lg:left-20 xl:left-30 xl:text-3xl font-bold">
-        <span className="text-gray-600"> I'm </span>
+        <span className="text-gray-600"> I`m </span>
 
         <span className=" text-red-500">
           <Typewriter

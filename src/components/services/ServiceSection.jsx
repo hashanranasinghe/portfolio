@@ -8,7 +8,7 @@ function ServiceSection() {
           <h1 className="text-blue-700 font-bold text-5xl py-10">
             My Projects
           </h1>
-          <p className="text-black text-center w-screen px-40 pt-2">
+          <p className="text-black text-center w-screen lg:px-40  md:px-10 sm:px-10 pt-2">
             {" "}
             Hello and welcome to my portfolio! I`m Hashan, a Flutter developer
             with over 5 years of experience building high-quality mobile apps

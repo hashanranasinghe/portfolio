@@ -1,16 +1,17 @@
-import React from "react";
-
+import { Typography } from "@mui/material";
 function Footer() {
   return (
-    <div>
-      <div className="w-full bg-gray-800">
-        <div className="container mx-auto py-5 flex items-center justify-between">
-          <span className="text-2xl font-bold  text-white">H</span>
-
-          <span className="hidden md:block font-medium text-white">Hashan Ranasinghe</span>
-        </div>
-      </div>
-    </div>
+    <footer className="w-full bg-white p-8">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+       </div>
+      <hr className="my-8 border-blue-gray-50" />
+      <Typography color="blue-gray" className="text-center font-normal pb-5">
+      Designed & Built by Hashan
+      </Typography>
+      <Typography color="blue-gray" className="text-center font-normal">
+        &copy; 2023 All rights reserved.
+      </Typography>
+    </footer>
   );
 }
 

@@ -9,7 +9,7 @@ function ProjectSection() {
       <h1 className="text-blue-700 font-bold text-5xl py-5">
             Contact Me
           </h1>
-        <p className="text-black text-center w-screen px-40 pt-2 text-xl">
+        <p className="text-black text-center w-screen lg:px-40  md:px-10 sm:px-10 pt-2 text-xl">
           {" "}
           Hello and welcome to my portfolio! I`m Hashan, a Flutter developer
           with over 5 years of experience building high-quality mobile apps for

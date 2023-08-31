@@ -1,4 +1,4 @@
-import React from "react";
+
 import Owner from "../../assets/images/image.png";
 function AboutSection() {
   return (
@@ -13,9 +13,9 @@ function AboutSection() {
           <h1 className="text-indigo-500 font-bold">ABOUT ME</h1>
           <h1 className="text-xl font-medium">BETTER DESIGN</h1>
           <h1 className="text-xl font-medium">BETTER EXPERIENCE</h1>
-          <p className="text-gray-400">
+          <p className="text-gray-400 ">
             {" "}
-            Hello and welcome to my portfolio! I'm Hashan, a Flutter developer
+            Hello and welcome to my portfolio! I`m Hashan, a Flutter developer
             with over 5 years of experience building high-quality mobile apps
             for a variety of industries.{" "}
           </p>

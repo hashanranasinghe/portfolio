@@ -1,4 +1,4 @@
-import React from 'react'
+
 import p from "../../assets/images/p.jpg";
 function ProjectCard() {
   return (
