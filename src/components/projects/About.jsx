@@ -34,7 +34,7 @@ const contactDetails = [
 
 export const About = () => {
   return (
-    <div className="rounded-lg py-10 px-10 grid gap-y-4 gap-x-32 mx-auto bg-gray-50 md:grid-cols-2 sm:grid-cols-1 shadow-md cursor-pointer hover:shadow-lg hover:scale-105 duration-300 ">
+    <div className="rounded-lg py-10 px-10 grid gap-y-4 gap-x-10 bg-gray-50 md:grid-cols-2 sm:grid-cols-1 shadow-md cursor-pointer hover:shadow-lg hover:scale-105 duration-300">
       {contactDetails.map((detail, index) => (
         <div
           key={index}

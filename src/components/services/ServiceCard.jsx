@@ -1,7 +1,11 @@
 import image from "../../assets/images/p.jpg";
 function ServiceCard() {
   return (
-    <div className="h-[330px] w-[275px] bg-white flex flex-col justify-around items-center p-5 rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 duration-300">
+    <div 
+
+
+    
+    className="h-[330px] w-[275px] bg-white flex flex-col justify-around items-center p-5 rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 duration-300">
       <div className="relative flex justify-center items-center group h-[132px] w-[235px] rounded-lg">
         <img
           src={image}

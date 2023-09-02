@@ -4,7 +4,9 @@ import { SocialMediaBar } from "../components/SocialMediaBar";
 // eslint-disable-next-line react/prop-types
 function Layout({ children }) {
     return (
-        <div>
+        <div
+
+        >
             {children}
             <SocialMediaBar />
         </div>

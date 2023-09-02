@@ -1,8 +1,28 @@
 import ServiceCard from "./ServiceCard";
 
+import { motion as m} from "framer-motion";
 function ServiceSection() {
+const sectionVariant = {
+    offscreen: {
+      opacity: 0,
+      y: "20%",
+    },
+    onscreen: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 0.0,
+      },
+    },
+  };
   return (
-    <div className="bg-gray-50 py-20 px-20">
+    <m.div 
+    initial="offscreen"
+    whileInView="onscreen"
+    viewport={{ once: true, amount: "some" }}
+    variants={sectionVariant}
+    className="bg-gray-50 py-20 px-20">
       <div className="container mx-auto text-xl">
         <div className="flex flex-col items-center gap-3">
           <h1 className="text-blue-700 font-bold text-5xl py-10">
@@ -24,7 +44,8 @@ function ServiceSection() {
           <ServiceCard />
         </div>
       </div>
-    </div>
+    </m.div>
+  
   );
 }
 
