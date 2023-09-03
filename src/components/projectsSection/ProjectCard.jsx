@@ -1,5 +1,5 @@
 import image from "../../assets/images/p.jpg";
-function ServiceCard() {
+function ProjectCard() {
   return (
     <div 
 
@@ -41,4 +41,4 @@ function ServiceCard() {
   );
 }
 
-export default ServiceCard;
+export default ProjectCard;

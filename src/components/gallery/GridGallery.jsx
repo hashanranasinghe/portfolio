@@ -1,4 +1,5 @@
 import "./gallery.css";
+import { motion as m } from "framer-motion";
 export default function GridGallery() {
   const images = [
     {
@@ -46,14 +47,50 @@ export default function GridGallery() {
       imgSrc: "../../../src/assets/gallery/11.jpeg",
     },
   ];
-
+  const parentVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.4,
+      },
+    },
+  };
+  const childVariant = {
+    hidden: {
+      opacity: 0,
+      scale: 0,
+    },
+    show: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: "1",
+      },
+    },
+  };
   return (
     <>
-      <div className="gallery">
+      <m.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: "some" }}
+        // viewport={{ once: false }}
+        variants={parentVariant}
+        className="gallery mx-32"
+        id="gallery"
+      >
         {images.map((item, index) => {
           return (
             <>
-              <div className="pics relative" key={index}>
+              <m.div 
+              variants={childVariant}
+              className="pics relative mx-1 my-2" key={index}>
                 <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
                   <div className="absolute inset-0 bg-black opacity-70"></div>
                   <div className="mx-auto text-white z-10 self-center uppercase">
@@ -65,11 +102,11 @@ export default function GridGallery() {
                   alt={item.id}
                   style={{ width: "100%" }}
                 />
-              </div>
+              </m.div>
             </>
           );
         })}
-      </div>
+      </m.div>
     </>
   );
 }

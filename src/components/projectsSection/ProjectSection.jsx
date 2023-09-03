@@ -1,7 +1,7 @@
-import ServiceCard from "./ServiceCard";
+import ProjectCard from "./ProjectCard";
 
 import { motion as m} from "framer-motion";
-function ServiceSection() {
+function ProjectSection() {
 const sectionVariant = {
     offscreen: {
       opacity: 0,
@@ -22,7 +22,7 @@ const sectionVariant = {
     whileInView="onscreen"
     viewport={{ once: true, amount: "some" }}
     variants={sectionVariant}
-    className="bg-gray-50 py-20 px-20">
+    className="bg-gray-50 py-20 px-20" id="project">
       <div className="container mx-auto text-xl">
         <div className="flex flex-col items-center gap-3">
           <h1 className="text-blue-700 font-bold text-5xl py-10">
@@ -36,12 +36,12 @@ const sectionVariant = {
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 pt-5">
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
       </div>
     </m.div>
@@ -49,4 +49,4 @@ const sectionVariant = {
   );
 }
 
-export default ServiceSection;
+export default ProjectSection;

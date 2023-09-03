@@ -2,9 +2,9 @@
 import { About } from "./About";
 
 
-function ProjectSection() {
+function AboutSection() {
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto " id="contact">
       <div className="flex flex-col items-center gap-3">
       <h1 className="text-blue-700 font-bold text-5xl py-5">
             Contact Me
@@ -23,4 +23,4 @@ function ProjectSection() {
   );
 }
 
-export default ProjectSection;
+export default AboutSection;
