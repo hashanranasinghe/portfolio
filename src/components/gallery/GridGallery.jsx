@@ -1,50 +1,62 @@
 import "./gallery.css";
 import { motion as m } from "framer-motion";
+import Img1 from "../../assets/gallery/1.jpg";
+import Img2 from "../../assets/gallery/2.jpg";
+import Img3 from "../../assets/gallery/3.jpg";
+import Img4 from "../../assets/gallery/4.jpg";
+import Img5 from "../../assets/gallery/5.jpg";
+import Img6 from "../../assets/gallery/6.jpg";
+import Img7 from "../../assets/gallery/7.jpg";
+import Img8 from "../../assets/gallery/8.jpg";
+import Img9 from "../../assets/gallery/9.jpg";
+import Img10 from "../../assets/gallery/10.jpg";
+import Img11 from "../../assets/gallery/11.jpeg";
+
 export default function GridGallery() {
   const images = [
     {
       id: 1,
-      imgSrc: "../../../src/assets/gallery/1.jpg",
+      imgSrc: Img1,
     },
     {
       id: 2,
-      imgSrc: "../../../src/assets/gallery/2.jpg",
+      imgSrc: Img2,
     },
     {
       id: 3,
-      imgSrc: "../../../src/assets/gallery/3.jpg",
+      imgSrc: Img3,
     },
     {
       id: 4,
-      imgSrc: "../../../src/assets/gallery/4.jpg",
+      imgSrc: Img4,
     },
     {
       id: 5,
-      imgSrc: "../../../src/assets/gallery/5.jpg",
+      imgSrc: Img5,
     },
     {
       id: 6,
-      imgSrc: "../../../src/assets/gallery/6.jpg",
+      imgSrc: Img6,
     },
     {
       id: 7,
-      imgSrc: "../../../src/assets/gallery/7.jpg",
+      imgSrc: Img7,
     },
     {
       id: 8,
-      imgSrc: "../../../src/assets/gallery/8.jpg",
+      imgSrc: Img8,
     },
     {
       id: 9,
-      imgSrc: "../../../src/assets/gallery/9.jpg",
+      imgSrc: Img9,
     },
     {
       id: 10,
-      imgSrc: "../../../src/assets/gallery/10.jpg",
+      imgSrc: Img10,
     },
     {
       id: 11,
-      imgSrc: "../../../src/assets/gallery/11.jpeg",
+      imgSrc: Img11,
     },
   ];
   const parentVariant = {
@@ -88,9 +100,11 @@ export default function GridGallery() {
         {images.map((item, index) => {
           return (
             <>
-              <m.div 
-              variants={childVariant}
-              className="pics relative mx-1 my-2" key={index}>
+              <m.div
+                variants={childVariant}
+                className="pics relative mx-1 my-2"
+                key={index}
+              >
                 <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
                   <div className="absolute inset-0 bg-black opacity-70"></div>
                   <div className="mx-auto text-white z-10 self-center uppercase">
