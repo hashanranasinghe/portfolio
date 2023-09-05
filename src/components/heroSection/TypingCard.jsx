@@ -16,12 +16,12 @@ function TypingCard() {
         type: "spring",
         stiffness: 200,
       }}
-      className="flex flex-col items-center justify-center rounded-lg shadow-xl absolute top-1/4 m-auto bg-white h-1/5 w-1/4 left-20"
+      className="flex flex-col items-center justify-center rounded-lg shadow-xl absolute top-[75px] m-auto bg-white  h-[150px] w-[300px] left-20"
     >
-      <div className="flex flex-col text-center text-sm sm:left-10 sm:text-sm md:left-3 md:text-4xl lg:left-20 xl:left-30 xl:text-3xl font-bold">
-        <span className="text-gray-600"> I`m </span>
+      <div className="flex flex-col text-center text-3xl sm:left-10 md:left-3 lg:left-20 xl:left-30 font-bold">
+        <span className="text-black"> I`m </span>
 
-        <span className=" text-red-500">
+        <span className=" text-blue-700">
           <Typewriter
             words={[
               "Hashan Ranasinghe",

@@ -7,7 +7,11 @@ import Layout from "./pages/Layout";
 import GridGallery from "./components/gallery/GridGallery";
 
 function App() {
+
   return (
+    <>
+    
+  
     <Layout>
       <Header />
       <ProjectSection />
@@ -15,6 +19,8 @@ function App() {
       <GridGallery />
       <Footer />
     </Layout>
+    </>
+ 
   );
 }
 
