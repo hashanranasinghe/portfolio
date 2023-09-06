@@ -1,8 +1,19 @@
+import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-
-import { motion as m} from "framer-motion";
+import { motion as m } from "framer-motion";
+import ProjectModal from "./ProjectModal";
+import ProjectData from "../../assets/data/project";
 function ProjectSection() {
-const sectionVariant = {
+  const [isShow, setIsShow] = useState(false);
+
+  const handleReadMore = () => {
+    setIsShow(true);
+  };
+  const handleOnClose = () => {
+    setIsShow(false);
+  };
+
+  const sectionVariant = {
     offscreen: {
       opacity: 0,
       y: "20%",
@@ -16,13 +27,16 @@ const sectionVariant = {
       },
     },
   };
+
   return (
-    <m.div 
-    initial="offscreen"
-    whileInView="onscreen"
-    viewport={{ once: true, amount: "some" }}
-    variants={sectionVariant}
-    className="bg-gray-50 py-20 px-20" id="project">
+    <m.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: "some" }}
+      variants={sectionVariant}
+      className="bg-gray-50 py-20 px-20"
+      id="project"
+    >
       <div className="container mx-auto text-xl">
         <div className="flex flex-col items-center gap-3">
           <h1 className="text-blue-700 font-bold text-5xl py-10">
@@ -30,22 +44,26 @@ const sectionVariant = {
           </h1>
           <p className="text-black text-center w-screen lg:px-40  md:px-10 sm:px-10 pt-2">
             {" "}
-            Hello and welcome to my portfolio! I`m Hashan, a Flutter developer
+            Hello and welcome to my portfolio! I'm Hashan, a Flutter developer
             with over 5 years of experience building high-quality mobile apps
             for a variety of industries.{" "}
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 pt-5">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {ProjectData.map((project, index) => {
+            return (
+              <ProjectCard
+                key={index}
+                handleReadMoreClick={handleReadMore}
+                title={project.name}
+                gitLink={project.link}
+              />
+            );
+          })}
         </div>
+        {isShow && <ProjectModal visible={isShow} onClose={handleOnClose} />}
       </div>
     </m.div>
-  
   );
 }
 
