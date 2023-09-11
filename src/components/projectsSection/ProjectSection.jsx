@@ -5,8 +5,9 @@ import ProjectModal from "./ProjectModal";
 import ProjectData from "../../assets/data/project";
 function ProjectSection() {
   const [isShow, setIsShow] = useState(false);
-
-  const handleReadMore = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const handleReadMore = (project) => {
+    setSelectedProject(project);
     setIsShow(true);
   };
   const handleOnClose = () => {
@@ -51,17 +52,26 @@ function ProjectSection() {
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 pt-5">
           {ProjectData.map((project, index) => {
+     
             return (
               <ProjectCard
                 key={index}
-                handleReadMoreClick={handleReadMore}
+                handleReadMoreClick={() => handleReadMore(project)}
                 title={project.name}
                 gitLink={project.link}
+                short={project.short}
+                image={project.img}
               />
             );
           })}
         </div>
-        {isShow && <ProjectModal visible={isShow} onClose={handleOnClose} />}
+        {isShow && (
+          <ProjectModal
+            visible={isShow}
+            onClose={handleOnClose}
+        project={selectedProject}
+          />
+        )}
       </div>
     </m.div>
   );

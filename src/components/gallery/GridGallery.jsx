@@ -1,12 +1,12 @@
 import "./gallery.css";
 import { motion as m } from "framer-motion";
-import Img1 from "../../assets/gallery/1.jpg";
-import Img2 from "../../assets/gallery/2.jpg";
-import Img3 from "../../assets/gallery/3.jpg";
-import Img4 from "../../assets/gallery/4.jpg";
-import Img5 from "../../assets/gallery/5.jpg";
-import Img6 from "../../assets/gallery/6.jpg";
-import Img7 from "../../assets/gallery/7.jpg";
+import T1 from "../../assets/gallery/t1.jpg";
+import T2 from "../../assets/gallery/t2.jpg";
+import Y1 from "../../assets/gallery/y1.jpg";
+import H1 from "../../assets/gallery/h1.jpg";
+import H2 from "../../assets/gallery/h2.jpg";
+import H3 from "../../assets/gallery/h3.jpg";
+import H4 from "../../assets/gallery/h4.jpg";
 import Img8 from "../../assets/gallery/8.jpg";
 import Img9 from "../../assets/gallery/9.jpg";
 import Img10 from "../../assets/gallery/10.jpg";
@@ -16,47 +16,67 @@ export default function GridGallery() {
   const images = [
     {
       id: 1,
-      imgSrc: Img1,
+      imgSrc: T1,
+      title:"TARANAYA - 2021"
     },
     {
       id: 2,
-      imgSrc: Img2,
+      imgSrc: T2,
+      title:"TARANAYA - 2021"
     },
     {
       id: 3,
-      imgSrc: Img3,
+      imgSrc: Y1,
+      title:"YOUTH DAY - 2023"
+
     },
     {
       id: 4,
-      imgSrc: Img4,
+      imgSrc:H1,
+      title:"HACKADEV - 2022"
+
     },
     {
       id: 5,
-      imgSrc: Img5,
+      imgSrc: H2,
+      title:"HACKADEV - 2022"
+
     },
     {
       id: 6,
-      imgSrc: Img6,
+      imgSrc: H3,
+      title:"HACKADEV - 2022"
+
     },
     {
       id: 7,
-      imgSrc: Img7,
+      imgSrc: H4,
+      title:"HACKADEV - 2022"
+
     },
     {
       id: 8,
       imgSrc: Img8,
+      title:"TARANAYA 2021"
+
     },
     {
       id: 9,
       imgSrc: Img9,
+      title:"TARANAYA 2021"
+
     },
     {
       id: 10,
       imgSrc: Img10,
+      title:"TARANAYA 2021"
+
     },
     {
       id: 11,
       imgSrc: Img11,
+      title:"TARANAYA 2021"
+
     },
   ];
   const parentVariant = {
@@ -108,7 +128,7 @@ export default function GridGallery() {
                 <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
                   <div className="absolute inset-0 bg-black opacity-70"></div>
                   <div className="mx-auto text-white z-10 self-center uppercase">
-                    Hello World
+                    {item.title}
                   </div>
                 </div>
                 <img
