@@ -45,9 +45,7 @@ function ProjectSection() {
           </h1>
           <p className="text-black text-center w-screen lg:px-40  md:px-10 sm:px-10 pt-2">
             {" "}
-            Hello and welcome to my portfolio! I'm Hashan, a Flutter developer
-            with over 5 years of experience building high-quality mobile apps
-            for a variety of industries.{" "}
+            Please review the project descriptions to gain insight into each app and the challenges I tackled during development. If you have inquiries or wish to discuss potential projects, kindly contact me. Thank you for visiting my portfolio.{" "}
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 pt-5">

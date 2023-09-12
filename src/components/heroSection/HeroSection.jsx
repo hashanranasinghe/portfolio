@@ -1,4 +1,4 @@
-import Owner from "../../assets/images/image.png";
+import My from "../../assets/images/my.png";
 import AboutCard from "./AboutCard";
 import { motion } from "framer-motion";
 import TypingCard from "./TypingCard";
@@ -7,7 +7,7 @@ function HeroSection() {
   return (
     <>
       <img
-        src={Owner}
+        src={My}
         className="absolute bottom-0 right-0 left-0 mx-auto h-2/3 object-cover"
         alt=""
       />

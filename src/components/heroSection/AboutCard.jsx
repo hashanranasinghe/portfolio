@@ -10,14 +10,17 @@ function AboutCard() {
         type: "spring",
         stiffness: 200,
       }}
-      className="flex-col gap-4 p-6 rounded-md shadow-xl absolute bottom-2 left-16 lg:left-2/3 md:left-[50%] sm:left-[25%] h-[200px] w-[350px] bg-white"
+      className="flex-col gap-4 p-6 rounded-md shadow-xl absolute bottom-5 left-16 lg:left-2/3 md:left-[50%] sm:left-[25%] h-[210px] w-[350px] bg-white"
     >
-      <h1 className="xl:text-2xl lg:text-2xl md:text-2xl sm:text-lg font-bold text-blue-700">Hi, I`m Hashan</h1>
-      <p className="text-gray-600 text-justify">
+      <h1 className="xl:text-2xl lg:text-2xl md:text-2xl sm:text-lg font-bold text-blue-700">
+        Hi, I`m Hashan
+      </h1>
+      <p className="text-gray-600 text-justify pb-6">
         {" "}
-        In publishing and graphic design, Lorem ipsum is a placeholder text
-        commonly used to demonstrate the visual form of a document or a typeface
-        without relying on meaningful content.
+        I'm Hashan, a skilled Flutter developer known for clear communication
+        and delivering on-time, on-budget mobile apps. Visit my portfolio and
+        reach out to bring your app ideas to life. Let's create something
+        amazing!
       </p>
     </motion.div>
   );

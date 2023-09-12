@@ -7,76 +7,43 @@ import H1 from "../../assets/gallery/h1.jpg";
 import H2 from "../../assets/gallery/h2.jpg";
 import H3 from "../../assets/gallery/h3.jpg";
 import H4 from "../../assets/gallery/h4.jpg";
-import Img8 from "../../assets/gallery/8.jpg";
-import Img9 from "../../assets/gallery/9.jpg";
-import Img10 from "../../assets/gallery/10.jpg";
-import Img11 from "../../assets/gallery/11.jpeg";
 
 export default function GridGallery() {
   const images = [
     {
       id: 1,
       imgSrc: T1,
-      title:"TARANAYA - 2021"
+      title: "TARANAYA - 2021",
     },
     {
       id: 2,
       imgSrc: T2,
-      title:"TARANAYA - 2021"
+      title: "TARANAYA - 2021",
     },
     {
       id: 3,
       imgSrc: Y1,
-      title:"YOUTH DAY - 2023"
-
+      title: "YOUTH DAY - 2023",
     },
     {
       id: 4,
-      imgSrc:H1,
-      title:"HACKADEV - 2022"
-
+      imgSrc: H1,
+      title: "HACKADEV - 2022",
     },
     {
       id: 5,
       imgSrc: H2,
-      title:"HACKADEV - 2022"
-
+      title: "HACKADEV - 2022",
     },
     {
       id: 6,
       imgSrc: H3,
-      title:"HACKADEV - 2022"
-
+      title: "HACKADEV - 2022",
     },
     {
       id: 7,
       imgSrc: H4,
-      title:"HACKADEV - 2022"
-
-    },
-    {
-      id: 8,
-      imgSrc: Img8,
-      title:"TARANAYA 2021"
-
-    },
-    {
-      id: 9,
-      imgSrc: Img9,
-      title:"TARANAYA 2021"
-
-    },
-    {
-      id: 10,
-      imgSrc: Img10,
-      title:"TARANAYA 2021"
-
-    },
-    {
-      id: 11,
-      imgSrc: Img11,
-      title:"TARANAYA 2021"
-
+      title: "HACKADEV - 2022",
     },
   ];
   const parentVariant = {
@@ -108,14 +75,20 @@ export default function GridGallery() {
   };
   return (
     <>
+      {" "}
+      <h1
+        id="gallery"
+        className="text-blue-700 font-bold text-5xl py-10 text-center"
+      >
+        My Gallery
+      </h1>
       <m.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: "some" }}
         // viewport={{ once: false }}
         variants={parentVariant}
-        className="gallery mx-32"
-        id="gallery"
+        className="gallery xl:mx-32"
       >
         {images.map((item, index) => {
           return (
@@ -127,7 +100,7 @@ export default function GridGallery() {
               >
                 <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
                   <div className="absolute inset-0 bg-black opacity-70"></div>
-                  <div className="mx-auto text-white z-10 self-center uppercase">
+                  <div className="mx-auto text-white z-10 self-center uppercase font-semibold">
                     {item.title}
                   </div>
                 </div>

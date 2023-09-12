@@ -4,7 +4,8 @@ import Video from "../projects/video.png";
 import Loan from "../projects/loan.png";
 import Dic from "../projects/dic.png";
 import ToDO from "../projects/todo.png";
-
+import Score from "../projects/score.png";
+import Flutter from "../projects/icons8-flutter-48.png";
 export default [
   {
     id: "1",
@@ -58,7 +59,7 @@ export default [
     short:"Build a Scoring App with FLUTTER & FIREBASE",
     description:
       "The cricket tournament management system consists of two apps: the admin app and the user app. The admin app is used by organizers to create and manage cricket tournaments. They can set up the tournament schedule, teams, and other important details. On the other hand, the user app is designed for teams participating in the tournament. It allows teams to register for the tournament and provides live updates on scores during matches. This way, teams can stay updated on their performance and track the progress of other teams. The system makes it easier for organizers to manage tournaments and provides a convenient platform for teams to participate and stay informed.",
-    img: Img,
+    img: Score,
     link: "https://github.com/supunnilakshana/info-bash.git",
   },
   {
@@ -67,7 +68,7 @@ export default [
     short:"Build a Units Converting App with FLUTTER",
     description:
       "The unit conversion application provides a user-friendly interface that makes it easy for users to convert different types of measurements according to their needs. Whether it's length, weight, volume, temperature, or other units, this app allows users to convert them effortlessly. For example, if you want to convert meters to feet or kilograms to pounds, this app has got you covered. It simplifies the process of converting measurements into the units you prefer. So, whether you're working on a science project or need to convert units for everyday tasks, this application is a handy tool that helps you get accurate conversions quickly and easily.",
-    img: Img,
+    img:Flutter,
     link: "https://github.com/hashanranasinghe/units-converting-app.git",
   },
   {
