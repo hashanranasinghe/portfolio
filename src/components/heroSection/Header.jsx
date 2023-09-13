@@ -81,7 +81,7 @@ function Header() {
           <HamburgerMenu />
         </div>
         <motion.div
-          className="progress-bar bg-gradient-to-r from-white to-blue-700 ... h-1 left-0 right-0 fixed"
+          className="progress-bar bg-gradient-to-r from-white to-blue-700 ... h-1 left-0 right-0 fixed z-20"
           style={{ scaleX }}
         />
       </nav>
