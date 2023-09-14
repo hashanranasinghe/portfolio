@@ -5,6 +5,7 @@ import Loan from "../projects/loan.png";
 import Dic from "../projects/dic.png";
 import ToDO from "../projects/todo.png";
 import Score from "../projects/score.png";
+import Food from "../projects/food.png";
 import Flutter from "../projects/icons8-flutter-48.png";
 export default [
   {
@@ -50,7 +51,7 @@ export default [
     short:"Build a Food Care App with FLUTTER, NODE.JS & MONGODB",
     description:
       "The food waste reduction app is a helpful tool that connects people who have extra food with those who are in need. Instead of throwing away or wasting food, users can donate their excess food through the app. This way, food that would have gone to waste can be given to someone who can use it. It's a great way to help reduce food waste and ensure that everyone has enough to eat. By using this app, we can make a positive impact on our community and work together to tackle the problem of food waste.",
-    img: Img,
+    img: Food,
     link: "https://github.com/hashanranasinghe/food-care-app.git",
   },
   {

@@ -5,7 +5,7 @@ import { SocialMediaBar } from "../components/SocialMediaBar";
 function Layout({ children }) {
 
   return (
-    <div>
+    <div className="scroll-smooth">
       {children}
       <SocialMediaBar />
     </div>

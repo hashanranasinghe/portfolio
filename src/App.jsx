@@ -7,20 +7,16 @@ import Layout from "./pages/Layout";
 import GridGallery from "./components/gallery/GridGallery";
 
 function App() {
-
   return (
     <>
-    
-  
-    <Layout>
-      <Header />
-      <ProjectSection />
-      <AboutSection />
-      <GridGallery />
-      <Footer />
-    </Layout>
+      <Layout>
+        <Header />
+        <ProjectSection />
+        <AboutSection />
+        <GridGallery />
+        <Footer />
+      </Layout>
     </>
- 
   );
 }
 

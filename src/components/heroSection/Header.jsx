@@ -3,6 +3,7 @@ import HamburgerMenu from "../heroSection/HamburgerMenu";
 import HeroSection from "./HeroSection";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { Link } from "react-scroll";
 import "./progress.css";
 
 function Header() {
@@ -56,8 +57,13 @@ function Header() {
                     : "py-1 px-3"
                 }
               >
-                <a
-                  href={`#${item.id}`}
+                <Link
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={1500}
+                  to={`${item.id}`}
+                  className="cursor-pointer"
                   onClick={() =>
                     item.id === "resume"
                       ? downloadPDF()
@@ -74,7 +80,7 @@ function Header() {
                   ) : (
                     item.label
                   )}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
