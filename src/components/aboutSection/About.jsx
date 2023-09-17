@@ -9,26 +9,31 @@ const contactDetails = [
     icon: <AssignmentIndIcon style={{ color: "blue" }} />,
     title: "Name",
     value: "Ranasinghe Mudiyanselage Hashan Kalhara Ranasinghe",
+    link: null,
   },
   {
     icon: <CalendarMonthIcon style={{ color: "blue" }} />,
     title: "Birth day",
     value: "06 April 1999",
+    link: null,
   },
   {
     icon: <PhoneIphoneIcon style={{ color: "blue" }} />,
     title: "Phone Number",
     value: "+9476 6352298",
+    link: "callto:0766352298",
   },
   {
     icon: <MailOutlineIcon style={{ color: "blue" }} />,
     title: "Email",
     value: "hashan.ranasinghe98@gmail.com",
+    link: "mailto:hashan.ranasinghe98@gmail.com",
   },
   {
     icon: <HomeIcon style={{ color: "blue" }} />,
     title: "Address",
     value: "No.364/E, Embilmeegama, Pilimatalwa.",
+    link: null,
   },
 ];
 
@@ -44,9 +49,16 @@ export const About = () => {
             {detail.icon}
             <h4 className="text-xl font-bold text-blue-700">{detail.title}</h4>
           </div>
-          <p className="text-md text-gray-500">{detail.value}</p>
+          {detail.link ? (
+            <a href={detail.link} className="text-md text-gray-500">
+              {detail.value}
+            </a>
+          ) : (
+            <p className="text-md text-gray-500">{detail.value}</p>
+          )}
         </div>
       ))}
     </div>
   );
+  
 };
