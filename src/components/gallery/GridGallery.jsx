@@ -7,6 +7,8 @@ import H1 from "../../assets/gallery/h1.jpg";
 import H2 from "../../assets/gallery/h2.jpg";
 import H3 from "../../assets/gallery/h3.jpg";
 import H4 from "../../assets/gallery/h4.jpg";
+import E from "../../assets/gallery/e.jpg";
+import TAD1 from "../../assets/gallery/tad1.jpg";
 
 export default function GridGallery() {
   const images = [
@@ -44,6 +46,16 @@ export default function GridGallery() {
       id: 7,
       imgSrc: H4,
       title: "HACKADEV - 2022",
+    },
+    {
+      id: 8,
+      imgSrc: E,
+      title: "SLASSCOM National IT & BPM Week",
+    },
+    {
+      id: 9,
+      imgSrc: TAD1,
+      title: "TADHACK - 2023",
     },
   ];
   const parentVariant = {
