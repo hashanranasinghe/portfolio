@@ -1,35 +1,52 @@
+// HamburgerMenu.jsx
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-import { motion } from "framer-motion";
-const toggleVariant = {
+
+const menuVariants = {
   hidden: {
     y: "-100%",
+    opacity: 0
   },
-  show: {
-    y: "0%",
+  visible: {
+    y: 0,
+    opacity: 1,
     transition: {
-      duration: 1,
-      type: "spring",
-      bounce: "0.2",
-      ease: "easeOut",
-    },
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.1
+    }
   },
-
+  exit: {
+    y: "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
 };
+
+const itemVariants = {
+  hidden: { y: -20, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1,
+    transition: { duration: 0.5 }
+  }
+};
+
 const HamburgerMenu = ({ selectedItem, handleItemClick }) => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const handleHamburgerClick = () => {
-    console.log("h9ioonwefwe");
-    setMenuVisible((prev) => !prev);
+    setMenuVisible(prev => !prev);
   };
 
   const handleMenuItemClick = (itemName) => {
-    // Close the menu when an item is clicked
-    setMenuVisible((prev) => !prev);
-
-    // Handle the item click
+    setMenuVisible(false);
     handleItemClick(itemName);
   };
 
@@ -42,8 +59,7 @@ const HamburgerMenu = ({ selectedItem, handleItemClick }) => {
   ];
 
   const downloadPDF = () => {
-    // Close the menu when the "Resume" item is clicked
-    setMenuVisible((prev) => !prev);
+    setMenuVisible(false);
 
     const link = document.createElement("a");
     link.href =
@@ -57,52 +73,62 @@ const HamburgerMenu = ({ selectedItem, handleItemClick }) => {
 
   return (
     <>
-      <div
-        className={`space-y-1 md:hidden cursor-pointer z-40 `}
-        onClick={() => handleHamburgerClick()}
+      <motion.div
+        className="md:hidden cursor-pointer z-50 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md"
+        onClick={handleHamburgerClick}
+        whileTap={{ scale: 0.9 }}
       >
-        {menuVisible ? <MenuIcon style={{ color: "white" }} /> : <MenuIcon />}
-      </div>
+        {menuVisible ? (
+          <CloseIcon style={{ color: "#3b82f6" }} />
+        ) : (
+          <MenuIcon style={{ color: "#3b82f6" }} />
+        )}
+      </motion.div>
 
-      {menuVisible && (
-        <motion.ul
-          variants={toggleVariant}
-          initial={"hidden"}
-          animate={"show"}
-          id="menu"
-          className={`bg-indigo-900 md:hidden absolute left-0 top-0 w-full p-10 rounded-b-3xl text-white space-y-10 text-center z-30`}
-        >
-          {navigationItems.map((item) => (
-            <li
-              key={item.id}
-              className={
-                selectedItem === item.id
-                  ? "border-solid border-2 border-blue-700 py-1 px-3 rounded-md text-blue-700"
-                  : "py-1 px-3"
-              }
-            >
-              <a
-                href={`#${item.id}`}
-                onClick={
-                  () =>
-                    item.id === "resume"
-                      ? downloadPDF()
-                      : handleMenuItemClick(item.id) // Call handleMenuItemClick
-                }
-              >
-                {item.id === "resume" ? (
-                  <>
-                    <FileDownloadOutlinedIcon style={{ marginRight: "8px" }} />
-                    {item.label}
-                  </>
-                ) : (
-                  item.label
-                )}
-              </a>
-            </li>
-          ))}
-        </motion.ul>
-      )}
+      <AnimatePresence>
+        {menuVisible && (
+          <motion.div
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-indigo-900 to-blue-800 md:hidden z-40 overflow-hidden flex flex-col items-center justify-center"
+          >
+            <motion.ul className="flex flex-col items-center justify-center gap-8 text-white w-full">
+              {navigationItems.map((item) => (
+                <motion.li
+                  key={item.id}
+                  variants={itemVariants}
+                  className={`w-3/4 text-center py-4 px-8 rounded-xl ${
+                    selectedItem === item.id
+                      ? "bg-white/20 backdrop-blur-sm text-white shadow-lg border border-white/20"
+                      : "hover:bg-white/10 transition-all duration-300"
+                  }`}
+                >
+                  <a
+                    href={`#${item.id}`}
+                    className="flex items-center justify-center text-lg font-medium"
+                    onClick={() =>
+                      item.id === "resume"
+                        ? downloadPDF()
+                        : handleMenuItemClick(item.id)
+                    }
+                  >
+                    {item.id === "resume" ? (
+                      <>
+                        <FileDownloadOutlinedIcon className="mr-2" />
+                        {item.label}
+                      </>
+                    ) : (
+                      item.label
+                    )}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

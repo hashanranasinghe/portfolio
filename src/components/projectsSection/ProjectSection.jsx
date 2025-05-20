@@ -3,76 +3,60 @@ import ProjectCard from "./ProjectCard";
 import { motion as m } from "framer-motion";
 import ProjectModal from "./ProjectModal";
 import ProjectData from "../../assets/data/project";
-function ProjectSection() {
+const ProjectSection = () => {
   const [isShow, setIsShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  
   const handleReadMore = (project) => {
     setSelectedProject(project);
     setIsShow(true);
   };
+  
   const handleOnClose = () => {
     setIsShow(false);
   };
-
-  const sectionVariant = {
-    offscreen: {
-      opacity: 0,
-      y: "20%",
-    },
-    onscreen: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 0.0,
-      },
-    },
-  };
-
   return (
-    <m.div
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: "some" }}
-      variants={sectionVariant}
-      className="bg-gray-50 py-20 px-20"
-      id="project"
-    >
-      <div className="container mx-auto text-xl">
-        <div className="flex flex-col items-center gap-3">
-          <h1 className="text-blue-700 font-bold text-5xl py-10">
-            My Projects
-          </h1>
-          <p className="text-black text-center w-screen lg:px-40  md:px-10 sm:px-10 pt-2">
-            {" "}
-            Please review the project descriptions to gain insight into each app and the challenges I tackled during development. If you have inquiries or wish to discuss potential projects, kindly contact me. Thank you for visiting my portfolio.{" "}
+    <section className="bg-gradient-to-b from-gray-50 to-white py-20" id="project">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-3">
+            PORTFOLIO
+          </span>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">My Projects</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-gray-600">
+            Explore my projects to see my skills in action. Each project represents unique challenges
+            I've tackled. Feel free to reach out if you'd like to discuss any of them in detail.
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5 pt-5">
-          {ProjectData.map((project, index) => {
-     
-            return (
-              <ProjectCard
-                key={index}
-                handleReadMoreClick={() => handleReadMore(project)}
-                title={project.name}
-                gitLink={project.link}
-                short={project.short}
-                image={project.img}
-              />
-            );
-          })}
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ProjectData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              handleReadMoreClick={() => handleReadMore(project)}
+              title={project.name}
+              gitLink={project.link}
+              short={project.short}
+              image={project.img}
+            />
+          ))}
         </div>
+
+        {/* Project Modal */}
         {isShow && (
           <ProjectModal
             visible={isShow}
             onClose={handleOnClose}
-        project={selectedProject}
+            project={selectedProject}
           />
         )}
       </div>
-    </m.div>
+    </section>
   );
-}
+};
+
 
 export default ProjectSection;

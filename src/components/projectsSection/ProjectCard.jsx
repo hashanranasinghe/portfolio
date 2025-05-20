@@ -1,36 +1,41 @@
 
-
-const ProjectCard = ({ handleReadMoreClick,title,gitLink,short ,image}) => {
+// Enhanced ProjectCard Component
+const ProjectCard = ({ handleReadMoreClick, title, gitLink, short, image }) => {
   return (
-    <div className="h-[330px] w-[275px] bg-white flex flex-col justify-around items-center p-5 rounded-lg cursor-pointer hover:shadow-lg hover:scale-105 duration-300">
-      <div className="relative flex justify-center items-center group h-[132px] w-[235px] rounded-lg">
+    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-xs">
+      <div className="h-48 overflow-hidden">
         <img
           src={image}
           loading="lazy"
           decoding="async"
-          data-nimg="1"
-          className="object-cover rounded-lg"
-          alt=""
+          className="w-full h-full object-cover"
+          alt={title}
         />
       </div>
-      <h1 className="text-lg font-bold py-2 text-center">{title}</h1>
-      <p className="text-gray-400 text-base text-center pb-5">
-    {short}
-      </p>
-      <div className="flex flex-row justify-between w-full pb-2 items-center">
-        <a
-          href={gitLink}
-          className="text-sm font-bold rounded-md px-3 py-1 hover:bg-blue-700 text-blue-700 hover:text-white bg-white"
-        >
-          Git Hub
-        </a>
-        <a
-          className="text-sm font-bold rounded-md px-3 py-1 hover:bg-blue-700 text-blue-700 hover:text-white bg-white"
-          onClick={handleReadMoreClick}
-        >Read More</a>
+      <div className="p-5">
+        <h3 className="font-bold text-xl mb-2 text-gray-800">{title}</h3>
+        <p className="text-gray-600 mb-4 h-16 overflow-hidden">{short}</p>
+        <div className="flex justify-between items-center pt-2 border-t border-gray-100">
+          <a
+            href={gitLink}
+            className="flex items-center space-x-1 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <button
+            onClick={handleReadMoreClick}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors"
+          >
+            Read More
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
 export default ProjectCard;
