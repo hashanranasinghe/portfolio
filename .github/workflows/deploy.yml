@@ -26,13 +26,13 @@ jobs:
         run: npm run build
 
       - name: Verify build output
-        run: ls -la ./dist
+        run: ls -la ./next
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: ./next
 
   deploy:
     name: Deploy to GitHub Pages
@@ -48,10 +48,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: ./next
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./next
