@@ -2,7 +2,9 @@ import ProjectPageCard from "@/components/cards/ProjectPage";
 import ProjectData from "@/data/projectData";
 import { notFound } from "next/navigation";
 
-// Generate all possible static params at build time
+type Props = {
+  params: Promise<{ id: string }>; 
+};
 export async function generateStaticParams() {
   return ProjectData.map((project) => ({
     id: project.id.toString(),
@@ -12,14 +14,15 @@ export async function generateStaticParams() {
 // Optional: Revalidate if content changes (for ISR)
 export const revalidate = 86400; // once per day
 
-const ProjectPage = ({ params }: { params: { id: string } }) => {
-  const id = parseInt(params.id, 10);
-  const project = ProjectData.find((p) => p.id === id);
+const ProjectPage = async ({ params }: Props) => {
+  const { id } = await params; // 👈 Await the params
+  const projectId = parseInt(id, 10);
+  const project = ProjectData.find((p) => p.id === projectId);
 
   if (!project) return notFound();
 
-  const prevProject = ProjectData.find((p) => p.id === id - 1);
-  const nextProject = ProjectData.find((p) => p.id === id + 1);
+  const prevProject = ProjectData.find((p) => p.id === projectId - 1);
+  const nextProject = ProjectData.find((p) => p.id === projectId + 1);
 
   return (
     <ProjectPageCard
