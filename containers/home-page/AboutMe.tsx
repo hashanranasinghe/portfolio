@@ -99,7 +99,7 @@ const AboutMe = () => {
               <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-blue-400/30 to-cyan-400/30 rounded-full blur-xl group-hover:scale-110 transition-transform duration-500 delay-100" />
 
               <m.img
-                src="/images/my2.png"
+                src="/portfolio/images/my2.png"
                 alt="Hashan Ranasinghe - Flutter Developer"
                 className="w-full h-auto object-cover  relative z-10 group-hover:scale-105 transition-transform duration-500"
                 whileHover={{ y: -5 }}

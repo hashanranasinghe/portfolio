@@ -16,7 +16,7 @@ const ProjectsSection = () => {
   const visibleProjects = [...ProjectData].reverse().slice(0, visibleCount);
 
   return (
-    <section className="bg-[url('/images/sec2.png')] bg-cover bg-center w-full rounded-4xl" id="#projects">
+    <section className="bg-[url('/portfolio/images/sec2.png')] bg-cover bg-center w-full rounded-4xl" id="#projects">
     <div className="flex pt-10 flex-col items-center">
       <motion.div
         className="flex lg:flex-row md:flex-row sm:flex-col flex-col justify-between items-start px-20 mb-20"

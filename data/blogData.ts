@@ -7,7 +7,7 @@ export default [
     date: "01 Jul, 2025",
     categories: ["Flutter"],
     author: "Hashan Ranasinghe",
-    imageSrc: "/blog/b1.jpg",
+    imageSrc: "/portfolio/blog/b1.jpg",
     imageAlt: "pub dev",
     description:
       "If you’re reading this article, I know you’re just getting started with learning and practicing the Flutter framework",
@@ -20,7 +20,7 @@ export default [
     date: "06 Jan, 2025",
     categories: ["Web Scraping"],
     author: "Hashan Ranasinghe",
-    imageSrc: "/blog/b2.jpg",
+    imageSrc: "/portfolio/blog/b2.jpg",
     imageAlt: "scraping",
     description:
       "In my previous article, I covered the basics of web scraping with Python.",
@@ -32,7 +32,7 @@ export default [
     date: "17 Jul, 2024",
     categories: ["Web Scraping"],
     author: "Hashan Ranasinghe",
-    imageSrc: "/blog/b3.jpg",
+    imageSrc: "/portfolio/blog/b3.jpg",
     imageAlt: "scraping",
     description:
       "Imagine you need information from a website. Sure, you could copy it manually, but what if you need a large amount of data?",

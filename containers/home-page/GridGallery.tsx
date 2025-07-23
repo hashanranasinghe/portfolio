@@ -80,7 +80,7 @@ export default function GridGallery() {
 
   return (
     <section
-      className="bg-[url('/images/sec2.png')] bg-cover bg-center w-full rounded-4xl"
+      className="bg-[url('/portfolio/images/sec2.png')] bg-cover bg-center w-full rounded-4xl"
       id="#gallery"
     >
       {/* Background Decorations */}

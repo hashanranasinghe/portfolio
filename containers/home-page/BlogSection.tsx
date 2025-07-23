@@ -27,7 +27,7 @@ const BlogSection: React.FC = () => {
 
   return (
     <section
-      className="bg-[url('/images/sec2.png')] bg-cover bg-center w-full rounded-4xl py-16 px-6 relative overflow-hidden"
+      className="bg-[url('/portfolio/images/sec2.png')] bg-cover bg-center w-full rounded-4xl py-16 px-6 relative overflow-hidden"
       id="#blog"
     >
       {/* Gradient overlay for better readability */}
