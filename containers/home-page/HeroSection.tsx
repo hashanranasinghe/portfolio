@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 import { motion as m } from "framer-motion";
+import React from "react";
 import Navbar from "../../components/nav/NavBar";
-import ProjectsSection from "./ProjectsSection";
 
 const HeroSection: React.FC = () => {
   return (
