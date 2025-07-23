@@ -47,4 +47,9 @@ export default [
     imgSrc: "/portfolio/gallery/tad1.jpg",
     title: "TADHACK - 2023",
   },
+  {
+    id: 10,
+    imgSrc: "/portfolio/gallery/COMURS.jpg",
+    title: "COMURS - 2025",
+  },
 ] satisfies Gallery[];

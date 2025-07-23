@@ -45,6 +45,18 @@ const EducationSection = () => {
     },
   };
 
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
+      },
+    },
+  };
+
   const timelineVariants = {
     hidden: { scaleY: 0 },
     visible: {
@@ -77,7 +89,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-realWhite py-5 px-6" id="#education">
+    <section className=" bg-realWhite py-5 px-6" id="#education">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -103,9 +115,9 @@ const EducationSection = () => {
           </motion.h2>
         </motion.div>
 
-        {/* Timeline Container */}
+        {/* Timeline Container - Desktop View */}
         <motion.div
-          className="relative"
+          className="relative hidden md:block"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -117,7 +129,7 @@ const EducationSection = () => {
             style={{ height: "100%" }}
           ></motion.div>
 
-          {/* Experience Items */}
+          {/* Experience Items - Desktop Timeline */}
           <div className="space-y-16">
             <AnimatePresence>
               {educationList.slice(0, visibleItems).map((exp, index) => (
@@ -159,37 +171,63 @@ const EducationSection = () => {
               ))}
             </AnimatePresence>
           </div>
-          {/* View More Button */}
-          {visibleItems < educationList.length && (
-            <motion.div
-              className="flex justify-center mt-16"
-              variants={buttonVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.button
-                onClick={showMoreItems}
-                className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full text-realWhite font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* Button Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-purple-500 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-
-                {/* Button Content */}
-                <div className="relative flex items-center gap-2">
-                  <span>View More</span>
-                  <motion.div
-                    animate={{ y: [0, 3, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ChevronDown className="w-5 h-5" />
-                  </motion.div>
-                </div>
-              </motion.button>
-            </motion.div>
-          )}
         </motion.div>
+
+        {/* Mobile View - Column Layout */}
+        <motion.div
+          className="block md:hidden"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="space-y-8">
+            <AnimatePresence>
+              {educationList.slice(0, visibleItems).map((exp, index) => (
+                <motion.div
+                  key={exp.id}
+                  variants={mobileItemVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className="w-full"
+                >
+                  <ExperienceCard {...exp} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </motion.div>
+
+        {/* View More Button */}
+        {visibleItems < educationList.length && (
+          <motion.div
+            className="flex justify-center mt-16"
+            variants={buttonVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.button
+              onClick={showMoreItems}
+              className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full text-realWhite font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {/* Button Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-purple-500 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+
+              {/* Button Content */}
+              <div className="relative flex items-center gap-2">
+                <span>View More</span>
+                <motion.div
+                  animate={{ y: [0, 3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </motion.div>
+              </div>
+            </motion.button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
