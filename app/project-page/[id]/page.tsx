@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export const revalidate = 86400; // once per day
 
 const ProjectPage = async ({ params }: Props) => {
-  const { id } = await params; // 👈 Await the params
+  const { id } = await params; 
   const projectId = parseInt(id, 10);
   const project = ProjectData.find((p) => p.id === projectId);
 
