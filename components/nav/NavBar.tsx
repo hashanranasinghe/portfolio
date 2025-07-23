@@ -117,7 +117,7 @@ export default function Navbar() {
           {/* Centered Logo */}
           <div className="flex items-center justify-center">
             <Image
-              src="/images/logo.png"
+              src="/portfolio/images/logo.png"
               alt="HR Logo"
               width={100}
               height={100}
@@ -151,7 +151,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/portfolio/images/logo.png"
               alt="HR Logo"
               width={100}
               height={100}
@@ -214,7 +214,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/portfolio/images/logo.png"
               alt="HR Logo"
               width={100}
               height={100}

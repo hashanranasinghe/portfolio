@@ -21,8 +21,8 @@ const ProjectPage = async ({ params }: Props) => {
 
   if (!project) return notFound();
 
-  const prevProject = ProjectData.find((p) => p.id === projectId - 1);
-  const nextProject = ProjectData.find((p) => p.id === projectId + 1);
+  const nextProject = ProjectData.find((p) => p.id === projectId - 1);
+  const prevProject = ProjectData.find((p) => p.id === projectId + 1);
 
   return (
     <ProjectPageCard
