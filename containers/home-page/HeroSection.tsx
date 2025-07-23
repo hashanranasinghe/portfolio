@@ -94,7 +94,7 @@ const HeroSection: React.FC = () => {
             {/* Main image container */}
             <div className="relative flex justify-center">
               <m.img
-                src="/images/my.png"
+                src="/portfolio/images/my.png"
                 alt="Hashan Ranasinghe - Flutter Developer"
                 className="w-full h-auto object-cover"
                 whileHover={{ scale: 1.02 }}
