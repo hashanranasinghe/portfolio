@@ -48,7 +48,7 @@ export default [
   },
   {
     id: 10,
-    imgSrc: "/portfolio/gallery/COMURS.jpg",
+    imgSrc: "/portfolio/gallery/comurs.jpg",
     title: "COMURS - 2025",
   },
   {
