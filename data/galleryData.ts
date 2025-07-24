@@ -41,7 +41,6 @@ export default [
     imgSrc: "/portfolio/gallery/h4.jpg",
     title: "HACKADEV - 2022",
   },
-
   {
     id: 9,
     imgSrc: "/portfolio/gallery/tad1.jpg",
@@ -51,5 +50,10 @@ export default [
     id: 10,
     imgSrc: "/portfolio/gallery/COMURS.jpg",
     title: "COMURS - 2025",
+  },
+  {
+    id: 11,
+    imgSrc: "/portfolio/gallery/batch.jpg",
+    title: "CIS 18/19 Batch - 2025",
   },
 ] satisfies Gallery[];
