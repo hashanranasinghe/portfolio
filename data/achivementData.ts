@@ -14,7 +14,7 @@ export default [
     title: "1st Runner-up in MadHack 2021",
     description: "Organized by the IEEE student branch of UCSC.",
   },
-  {
+  { 
     id: 3,
     title: "HackaDev Green Innovation Challenge 2022",
     description:

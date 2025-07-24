@@ -83,7 +83,7 @@ const WorkSection = () => {
   };
 
   return (
-    <section className=" bg-realWhite py-5 px-6" id="#education">
+    <section className=" bg-realWhite py-5 px-6" id="#work">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -105,7 +105,7 @@ const WorkSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="text-black bg-clip-text">My</span>{" "}
-            <span className="text-orange font-semibold">Education</span>
+            <span className="text-orange font-semibold">Work Experience</span>
           </motion.h2>
         </motion.div>
 
