@@ -87,6 +87,16 @@ export default [
   },
   {
     id: 10,
+    name: "Subscription - Tracker Backend",
+    short:
+      "Build a Subscription Tracker backend with Node.js, MongoDB , arcject and n8n",
+    description:
+      "I developed a Subscription Tracker Backend as a self-learning project to practice backend development and explore workflow automation using n8n. The system allows users to add subscriptions with renewal dates and automatically sends email reminders before renewals. To avoid scalability issues with long-running workflows, I implemented a cron-based scheduling approach using n8n, which checks for upcoming renewals daily and triggers email notifications accordingly. I also integrated Arcjet to protect the API from spam and abusive requests, ensuring better security. This project helped me gain hands-on experience with real-world backend challenges like scheduling, automation, and API protection.",
+    img: "/portfolio/projects/n8n.png",
+    launch: "https://github.com/hashanranasinghe/subscription-tracker.git",
+  },
+  {
+    id: 11,
     name: "Lumen Ui",
     short: "Build a Flutter UI package.",
     description:
@@ -95,7 +105,7 @@ export default [
     link: "https://github.com/hashanranasinghe/lumen_ui",
   },
   {
-    id: 11,
+    id: 12,
     name: "File Nest",
     short: "Build a Productivity App with FLUTTER & Local Storage",
     description:
@@ -108,7 +118,7 @@ export default [
       "https://play.google.com/store/apps/details?id=com.filenest.filenestapp&pcampaignid=web_share",
   },
   {
-    id: 12,
+    id: 13,
     name: "Wurdz",
     short: "Build a word finding App with FLUTTER & Local Storage",
     description:
