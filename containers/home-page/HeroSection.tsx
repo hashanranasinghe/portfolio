@@ -163,7 +163,7 @@ const HeroSection: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                {[...Array(5)].map((_, i) => (
+                {[...Array(3)].map((_, i) => (
                   <m.svg
                     key={i}
                     className="w-3 h-3 sm:w-4 sm:h-4 text-orange-500"
