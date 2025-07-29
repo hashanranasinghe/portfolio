@@ -183,7 +183,7 @@ const HeroSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 1.2 }}
               >
-                5 Years
+                3 Years
               </m.div>
               <m.div
                 className="text-gray-600 text-xs sm:text-sm"
