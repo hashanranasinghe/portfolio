@@ -1,127 +1,159 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import ProjectCard from "../../components/cards/ProjectCard";
 import ProjectData from "../../data/projectData";
 import Link from "next/link";
+
+const TOP_TAGS = 6;
+
 const ProjectsSection = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
-  const projectsPerPage = 3;
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [showArchive, setShowArchive] = useState(false);
 
-  const showMoreProjects = () => {
-    setVisibleCount((prev) => prev + projectsPerPage);
-  };
+  const featured = ProjectData.filter((p) => p.featured);
+  const archive = ProjectData.filter((p) => !p.featured);
 
-  const hasMoreProjects = visibleCount < ProjectData.length;
-  const visibleProjects = [...ProjectData].reverse().slice(0, visibleCount);
+  const tags = useMemo(() => {
+    const counts = new Map<string, number>();
+    ProjectData.forEach((p) =>
+      p.techStack.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1))
+    );
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, TOP_TAGS)
+      .map(([tag]) => tag);
+  }, []);
+
+  const matches = (techStack: string[]) =>
+    !activeTag || techStack.includes(activeTag);
+
+  const visibleFeatured = featured.filter((p) => matches(p.techStack));
+  const visibleArchive = archive.filter((p) => matches(p.techStack));
 
   return (
-    <section className="bg-[url('/portfolio/images/sec2.png')] bg-cover bg-center w-full rounded-4xl" id="#projects">
-    <div className="flex pt-10 flex-col items-center">
-      <motion.div
-        className="flex lg:flex-row md:flex-row sm:flex-col flex-col justify-between items-start px-20 mb-20"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
+    <section className="bg-background py-14 sm:py-20 px-6" id="work">
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          className="text-4xl md:text-5xl font-bold"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-            My
-          </span>{" "}
-          <span className="text-orange-500 font-semibold">Projects</span>
+          <p className="font-mono text-sm text-orange mb-3">Work</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Selected projects
+          </h2>
+          <p className="text-muted max-w-xl">
+            Each project below follows the same formula: the problem, what I
+            built, the stack, and the result. Filter by stack to see what I've
+            shipped with a given technology.
+          </p>
         </motion.div>
 
-        <div className="w-64 lg:h-0.5 md:h-0.5 sm:h-10 h-10 bg-gray-300lg:self-center"></div>
-
-        <motion.p
-          className="text-lg text-gray-300 leading-relaxed max-w-md lg:text-right"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          Explore my projects to see my skills in action. Each project
-          represents unique challenges I've tackled. Feel free to reach out if
-          you'd like to discuss any of them in detail.
-        </motion.p>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <AnimatePresence>
-          {visibleProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -50, scale: 0.9 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              layout
+        <div className="flex flex-wrap gap-2 mb-10">
+          <button
+            onClick={() => setActiveTag(null)}
+            className={`font-mono text-xs px-3 py-1.5 rounded-full border transition-colors ${
+              activeTag === null
+                ? "bg-orange text-realWhite border-orange"
+                : "border-border text-muted hover:border-orange hover:text-orange"
+            }`}
+          >
+            All
+          </button>
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+              className={`font-mono text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                activeTag === tag
+                  ? "bg-orange text-realWhite border-orange"
+                  : "border-border text-muted hover:border-orange hover:text-orange"
+              }`}
             >
-              <Link href={`/project-page/${project.id}`}>
-                <ProjectCard
-                  title={project.name}
-                  image={project.img}
-                  onClick={() => {}}
-                  short={project.short}
-                  key={index}
-                />
-              </Link>
-            </motion.div>
+              {tag}
+            </button>
           ))}
-        </AnimatePresence>
-      </div>
+        </div>
 
-      {hasMoreProjects && (
-        <motion.button
-          onClick={showMoreProjects}
-          className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:scale-105"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
         >
-          {/* Background gradient animation */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <AnimatePresence mode="popLayout">
+            {visibleFeatured.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link href={`/project-page/${project.id}`} className="block h-full">
+                  <ProjectCard project={project} />
+                </Link>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-          {/* Button content */}
-          <span className="relative z-10 flex items-center gap-2">
-            View More Projects
-            <motion.svg
-              className="w-5 h-5"
+        {visibleFeatured.length === 0 && (
+          <p className="text-sm text-muted mb-6">
+            No featured projects use that stack — check the archive below.
+          </p>
+        )}
+
+        <div className="mt-16">
+          <button
+            onClick={() => setShowArchive((v) => !v)}
+            className="flex items-center gap-2 font-mono text-xs text-muted hover:text-orange transition-colors mb-6"
+          >
+            {showArchive ? "Hide" : "Show"} full archive ({visibleArchive.length})
+            <svg
+              className={`w-3.5 h-3.5 transition-transform ${
+                showArchive ? "rotate-180" : ""
+              }`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              animate={{ y: [0, -2, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                d="M19 9l-7 7-7-7"
               />
-            </motion.svg>
-          </span>
+            </svg>
+          </button>
 
-          {/* Ripple effect */}
-          <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-active:scale-100 transition-transform duration-200"></div>
-        </motion.button>
-      )}
-      <div className="h-5"></div>
-    </div>
+          <AnimatePresence>
+            {showArchive && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {visibleArchive.map((project) => (
+                    <Link
+                      key={project.id}
+                      href={`/project-page/${project.id}`}
+                      className="block h-full"
+                    >
+                      <ProjectCard project={project} />
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </section>
   );
 };

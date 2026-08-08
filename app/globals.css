@@ -1,37 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f8f8f6;
+  --surface: #ffffff;
   --foreground: #171717;
-
+  --muted: #6b7280;
+  --border: #e7e5e0;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
   --color-black: #171717;
   --color-realBlack: #000000;
-  --color-orange: #FD853A;
-  --color-white: #CBCBCB;
+  --color-orange: #fd853a;
+  --color-white: #cbcbcb;
   --color-realWhite: #ffffff;
-  --color-darkblue: #1D2939;
-  --color-lightGray:#F2F4F7;
+  --color-darkblue: #1d2939;
+  --color-lightGray: #f2f4f7;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light is the default regardless of OS preference; dark only applies when explicitly toggled */
+:root[data-theme="dark"] {
+  --background: #0e1520;
+  --surface: #1d2939;
+  --foreground: #f2f4f7;
+  --muted: #9aa4b2;
+  --border: #2b3646;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
 }

@@ -5,7 +5,5 @@ export interface Contact {
   label: string;
   value: string;
   description: string;
-  gradient: string;
-  bgGradient: string;
   href?: string;
 }
